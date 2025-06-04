@@ -1,0 +1,32 @@
+body {
+  background-color: #111111;
+  width: 400px;
+
+  padding: 10px;
+}
+
+#whitelist-table {
+  display: grid;
+  row-gap: 5px;
+  grid-template-columns: 1fr 63px 50px;
+
+  margin-top: 5px;
+  
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+#blacklist-table {
+  display: grid;
+  row-gap: 5px;
+  grid-template-columns: 1fr 50px;
+
+  margin-top: 5px;
+
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.hidden {
+  display: none !important;
+}

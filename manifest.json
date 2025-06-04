@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "ScrollABit",
+  "version": "1.0",
+
+  "permissions": [
+    "storage"
+  ],
+
+  "browser_action": {
+    "default_title": "ScrollABit",
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["scroll.js"]
+    }
+  ]
+}
