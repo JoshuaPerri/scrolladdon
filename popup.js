@@ -19,8 +19,16 @@ function saveWhitelist(i) {
   var name = document.querySelector(`#name-input-${i}`).value
   var number = document.querySelector(`#number-input-${i}`).value
 
-  whitelist[i] = {name: name, scroll: number}
-  browser.storage.local.set({"whitelist": whitelist})
+  if (name === "" && number === "") {
+    whitelist.splice(i, 1)
+    generateWhitelistTable()
+  } else if (name !== "" && number !== "") {
+    number = parseInt(number)
+    whitelist[i] = {name: name, scroll: number}
+    browser.storage.local.set({"whitelist": whitelist})
+  } else {
+    console.log("Enter a name and a number")
+  }
 }
 
 function addNewWhitelist() {
@@ -62,7 +70,7 @@ function generateWhitelistTable() {
     document.querySelector(`#save-button-${i}`).addEventListener("click", (e) => {
       saveWhitelist(i)
     })
-  });
+  })
 
   var index = whitelist.length
   str = `<input id="name-input-${index}" type="text" placeholder="Whitelisted site">
