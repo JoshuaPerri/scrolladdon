@@ -1,0 +1,4 @@
+Small addon to scroll webpages by a specified amount upon loading
+
+Enter regex expressions into whitelist along with scroll amount using addon menu,
+the addon will scroll the page the specified amount when the url matches the regex
